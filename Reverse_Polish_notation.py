@@ -1,6 +1,4 @@
 #算术表达式的逆波兰表示与计算
-from turtle import position
-
 
 operatorLevel = {
     '#': -1,
@@ -159,9 +157,6 @@ class CalExpression:
                     calStack.push(num1 / num2)
             #判断是否计算完毕
         if(calStack.size() != 1):
-            error_num = calStack.pop()
-            #在字符串中查找error_num的位置
-            position = self.expression.find(str(error_num))
             return 'math error！'
         return calStack.pop()
 
